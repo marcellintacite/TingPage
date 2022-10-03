@@ -1,0 +1,89 @@
+@import "./../../../scss/config.scss";
+.footer {
+  width: 100%;
+  margin-top: 15px;
+  border-top: 1px solid #3334;
+  padding: 10px;
+  .footer_container {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    color: #333;
+
+    .footer_left {
+      flex: 1;
+      padding: 5px;
+      img {
+        height: 70px;
+      }
+      p {
+        padding: 0;
+        margin: 0;
+        padding-left: 50px;
+      }
+    }
+    .footer_right {
+      flex: 1;
+      padding-left: 10px;
+      padding-right: 10px;
+      .title {
+        position: relative;
+        .line {
+          position: absolute;
+          width: 50px;
+          height: 2px;
+          background: $primary;
+          bottom: -5px;
+        }
+      }
+      .links {
+        display: flex;
+        .first,
+        .second {
+          flex: 1;
+          span {
+            display: block;
+            margin-bottom: 10px;
+
+            &:hover {
+              transform: translateX(10px);
+              transition: all 0.3s ease-in;
+              a {
+                color: $primary;
+              }
+            }
+            a {
+              text-decoration: none;
+              color: #333;
+            }
+          }
+        }
+      }
+    }
+  }
+  .author {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    color: #333;
+    text-align: center;
+  }
+}
+
+@media screen and(max-width:788px) {
+  .footer {
+    padding: 2px;
+    .footer_container {
+      width: 95%;
+      display: block;
+
+      .footer_left {
+        padding: 0;
+      }
+    }
+    .author {
+      border-top: 0.5px dashed #3336;
+      margin-top: 10px;
+    }
+  }
+}

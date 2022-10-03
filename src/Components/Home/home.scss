@@ -1,0 +1,156 @@
+.home {
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+
+  .container {
+    width: 85%;
+    margin: auto;
+
+    header {
+      width: 100%;
+      min-height: 160px;
+      overflow: hidden;
+      margin-top: 20px;
+      background: #ecf2ff;
+      display: flex;
+
+      img {
+        width: 280px;
+      }
+
+      .text_container {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 5px;
+        padding-bottom: 20px;
+        p {
+          font-size: 30px;
+          text-align: center;
+          color: #333;
+        }
+        a {
+          padding: 10px 20px;
+          background: #c6a0f8;
+          text-decoration: none;
+          color: #fff;
+          border-radius: 5px;
+          &:hover {
+            // transform: scale(1.1);
+            background: #fff;
+            color: #333;
+            border: 1px solid #c6a0f8;
+            transition: all 0.3s ease-in;
+          }
+        }
+      }
+    }
+    .pages {
+      .cards {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 10px;
+        padding-bottom: 20px;
+
+        .lien {
+          &:hover {
+            transform: scale(1.07);
+            transition: transform 0.2s ease-out;
+          }
+          flex: 1;
+          border-radius: 5px;
+          margin-right: 25px;
+          margin-top: 40px;
+          padding: 5px;
+          box-shadow: 0px 7px 20px #c6a0f851;
+
+          a {
+            text-decoration: none;
+            color: #333;
+
+            .card_container {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              flex-direction: column;
+              img {
+                width: 40%;
+              }
+              span {
+                padding: 20px;
+                text-align: center;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Medias queries
+
+@media screen and(max-width:800px) {
+  .home {
+    .container {
+      header {
+        height: 100px;
+        display: flex;
+        img {
+          flex: 1;
+        }
+        .text_container {
+          flex: 4;
+          p {
+            font-size: 1rem;
+          }
+          a {
+            font-size: 12px;
+            padding: 9px 9px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and(max-width:520px) {
+  .home {
+    header {
+      border-radius: 5px;
+      background: linear-gradient(40deg, #0008, #0008),
+        url("./../assets/bg.jpg") !important;
+      background-position: right !important;
+      background-size: cover !important;
+      img {
+        display: none;
+      }
+      .text_container {
+        flex: 1;
+        p {
+          color: #fff !important;
+        }
+      }
+    }
+  }
+}
+
+@media screen and(max-width:380px) {
+  .home {
+    .container {
+      width: 95%;
+
+      header {
+      }
+
+      .cards {
+        width: 80%;
+        margin: auto;
+        display: block !important;
+      }
+    }
+  }
+}
