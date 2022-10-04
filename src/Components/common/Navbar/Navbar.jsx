@@ -5,7 +5,6 @@ import "./../../../css/navbar.css";
 
 function Navbar() {
   const [active, setActive] = useState(false);
-  console.log(active);
   return (
     <div className="navbar">
       <img src={logo} alt="Logo ting page" />
