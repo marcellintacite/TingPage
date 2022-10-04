@@ -5,6 +5,7 @@ import PageContext from "../../config/PageContext";
 import Select from "react-select";
 import Formulaires from "../Formulaires/Formulaires";
 import "./../../css/single.css";
+import Design from "../Design/Design";
 
 function Single(props) {
   const data = useContext(PageContext);
@@ -40,7 +41,8 @@ function Single(props) {
                 Design
               </div>
             </div>
-            <Formulaires data={data} />
+            {currentCommand === "informations" && <Formulaires data={data} />}
+            {currentCommand === "design" && <Design data={data} />}
           </div>
           <div className="right">papy</div>
         </div>
