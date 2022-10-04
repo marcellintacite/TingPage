@@ -1,0 +1,30 @@
+@import "../../scss/config.scss";
+.formulaire {
+  width: 80%;
+  margin: auto;
+  padding: 10px;
+  border: 0.3px solid $darkGrey;
+  h3 {
+    margin: 0;
+    text-align: center;
+    padding: 5px;
+  }
+  form {
+    width: 90%;
+    margin: auto;
+    .form_group {
+      margin-bottom: 5px;
+      .select {
+        border: 1px solid $primary;
+        width: 100%;
+      }
+      input {
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid $primary;
+        outline: none;
+      }
+    }
+  }
+}

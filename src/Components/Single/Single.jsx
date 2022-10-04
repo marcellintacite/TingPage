@@ -2,38 +2,47 @@ import React, { useContext, useState } from "react";
 import Footer from "../common/Footer/Footer";
 import Navbar from "../common/Navbar/Navbar";
 import PageContext from "../../config/PageContext";
+import Select from "react-select";
+import Formulaires from "../Formulaires/Formulaires";
+import "./../../css/single.css";
 
 function Single(props) {
   const data = useContext(PageContext);
+
   const [currentCommand, setCurrent] = useState("informations");
   return (
-    <div>
+    <div className="single">
       <Navbar />
       <div className="container">
-        <div className="tile">
+        <div className="title">
           <h4>Page de garde pour étudiant :</h4>
           <div className="line"></div>
         </div>
-        <div className="left">
-          <div className="commands">
-            <div
-              className={
-                currentCommand === "informations" ? "command active" : "command"
-              }
-            >
-              Informations
+        <div className="content_view">
+          <div className="left">
+            <div className="commands">
+              <div
+                className={
+                  currentCommand === "informations"
+                    ? "command active"
+                    : "command"
+                }
+                onClick={() => setCurrent("informations")}
+              >
+                Informations
+              </div>
+              <div
+                className={
+                  currentCommand === "design" ? "command active" : "command"
+                }
+                onClick={() => setCurrent("design")}
+              >
+                Design
+              </div>
             </div>
-            <div
-              className={
-                currentCommand === "design" ? "command active" : "command"
-              }
-            >
-              Design
-            </div>
+            <Formulaires data={data} />
           </div>
-          <div className="formulaire">
-            <h3>Mes informations</h3>
-          </div>
+          <div className="right">papy</div>
         </div>
       </div>
     </div>
