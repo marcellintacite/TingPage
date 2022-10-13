@@ -1,3 +1,74 @@
 .design {
-  width: 100%;
+  width: 90%;
+  margin: auto;
+  margin-top: 10px;
+  border: 1px solid #3333;
+  padding-bottom: 20px;
+
+  animation: opening 1s ease;
+
+  @keyframes opening {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  h3 {
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+  }
+  form {
+    width: 90%;
+    margin: auto;
+    margin-top: 10px;
+    .group {
+      display: flex;
+
+      justify-content: space-around;
+      .form_control {
+        margin-right: 15px;
+        display: flex;
+        width: 100%;
+        margin-bottom: 15px;
+        justify-content: space-around;
+        align-items: center;
+
+        label {
+          text-align: start;
+        }
+        input {
+          outline: none;
+          border: 1px solid #3333;
+          background: #fff;
+        }
+      }
+    }
+  }
+}
+
+@media screen and(max-width:600px) {
+  .design {
+    form {
+      .group {
+        flex-direction: column;
+        .form_control {
+          display: block;
+          .bordure {
+            width: 95%;
+            margin: auto;
+          }
+          input {
+            width: 100%;
+            margin-top: 5px;
+            font-size: 18px;
+            padding: 5px;
+          }
+        }
+      }
+    }
+  }
 }

@@ -16,7 +16,14 @@ export default function App() {
     titulaire: "",
     anne: "",
   });
-  const [design, setDesign] = useState({});
+  const [design, setDesign] = useState({
+    bg: "#fff",
+    couleurText: "#333",
+    couleurBordure: "#000",
+    couleurTitre: "#222",
+    tailleBordure: 4,
+    position: "gauche",
+  });
   return (
     <PageContext.Provider value={{ data, setData, design, setDesign }}>
       <div className="app">

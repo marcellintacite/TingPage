@@ -6,9 +6,23 @@ import Select from "react-select";
 import Formulaires from "../Formulaires/Formulaires";
 import "./../../css/single.css";
 import Design from "../Design/Design";
+import html2canvas from "html2canvas";
+import jsPDF from "jspdf";
+import Page from "../Page/Page";
 
 function Single(props) {
   const data = useContext(PageContext);
+
+  const handleSave = () => {
+    const ele = document.querySelector(".page");
+    html2canvas(ele).then((canvas) => {
+      const imgData = canvas.toDataURL("image/png");
+      const pdf = new jsPDF();
+      pdf.addImage(imgData, "JPEG", 0, 0);
+      // pdf.output('dataurlnewwindow');
+      pdf.save(`${data.data.nom} pgd.pdf`);
+    });
+  };
 
   const [currentCommand, setCurrent] = useState("informations");
   return (
@@ -41,11 +55,16 @@ function Single(props) {
                 Design
               </div>
             </div>
-            {currentCommand === "informations" && <Formulaires data={data} />}
+            {currentCommand === "informations" && (
+              <Formulaires data={data} handleSave={handleSave} />
+            )}
             {currentCommand === "design" && <Design data={data} />}
           </div>
-          <div className="right">papy</div>
+          <div className="right">
+            <Page data={data} />
+          </div>
         </div>
+        <Footer />
       </div>
     </div>
   );

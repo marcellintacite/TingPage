@@ -1,0 +1,80 @@
+.page {
+  width: 782px;
+  height: 900px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .show_page {
+    width: 100%;
+    height: 100%;
+    border: 2px solid #333;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    .bordure_second {
+      width: 100%;
+      border: 1px solid grey;
+      position: relative;
+
+      .header_text {
+        text-align: center;
+        h3 {
+          font-size: 1.5rem;
+          color: #333;
+        }
+        img {
+          width: 70px;
+        }
+      }
+      .title {
+        text-align: center;
+        padding: 10px;
+        width: 90%;
+        margin: auto;
+        border-radius: 5px;
+        margin-top: 2rem;
+        border: 1px solid #000;
+        h2 {
+          font-size: 28px;
+        }
+      }
+
+      .author {
+        width: 90%;
+        margin: auto;
+        padding: 10px;
+        p {
+          color: #222;
+          span {
+            color: rgb(16, 16, 16);
+            font-weight: bold;
+          }
+        }
+      }
+      .foot {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        bottom: 0;
+        .circle {
+          padding: 10px;
+          margin-bottom: 20px;
+          border: 1px solid grey;
+          h3 {
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and(max-width:700px) {
+  .page {
+    width: 100%;
+  }
+}

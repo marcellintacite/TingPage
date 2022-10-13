@@ -1,7 +1,7 @@
 import React from "react";
 import Select from "react-select";
 import "./../../css/formulaire.css";
-export default function Formulaires({ data }) {
+export default function Formulaires({ data, handleSave }) {
   const options = [
     {
       value: "UCB",
@@ -30,6 +30,11 @@ export default function Formulaires({ data }) {
   ];
 
   const { data: formData, design, setData, setDesign } = data;
+
+  const handlesub = (e) => {
+    e.preventDefault();
+    handleSave();
+  };
 
   const handleChangeUni = (e) => {
     const ndata = { ...formData, universite: e.value };
@@ -112,7 +117,7 @@ export default function Formulaires({ data }) {
           />
         </div>
         <div className="form_group">
-          <label htmlFor="titulaire">Saisir nom du titulaire du cours : </label>
+          <label htmlFor="titulaire">Nom titulaire du cours : </label>
           <input
             onChange={(e) => handleChange(e)}
             type="text"
@@ -133,7 +138,9 @@ export default function Formulaires({ data }) {
           />
         </div>
         <div className="form_group">
-          <button className="btn">Télécharger ma page</button>
+          <button className="btn" onClick={(e) => handlesub(e)}>
+            Télécharger ma page
+          </button>
         </div>
       </form>
     </div>

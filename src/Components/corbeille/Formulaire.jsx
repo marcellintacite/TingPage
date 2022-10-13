@@ -14,7 +14,8 @@ function Formulaire({ data, setData, design, setDesign }) {
   };
 
   const selection = (e) => {
-    const ndata = { ...data, universite: e.label };
+    const ndata = { ...data, universite: e.value };
+    console.log(e);
     setData(ndata);
   };
 
