@@ -80,7 +80,7 @@ export default function Design({ data }) {
               className="bordure"
               name="tailleBordure"
               min={0}
-              max={20}
+              max={15}
               value={design.tailleBordure}
               onChange={(e) => handleChange(e)}
             />

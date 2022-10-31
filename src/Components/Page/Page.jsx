@@ -5,12 +5,31 @@ import "./../../css/page.css";
 export default function Page({ data }) {
   const { data: dataText, design } = data;
   return (
-    <div className="page">
-      <div className="show_page">
-        <div className="bordure_second">
+    <div
+      className="page"
+      style={{
+        background: design.bg,
+      }}
+    >
+      <div
+        className="show_page"
+        style={{
+          borderColor: design.couleurBordure,
+          borderWidth: parseInt(design.tailleBordure),
+        }}
+      >
+        <div
+          className="bordure_second"
+          style={{ borderColor: design.couleurTitre }}
+        >
           <Header dataText={dataText} design={design} />
           {dataText.sujet.length > 0 && (
-            <div className="title">
+            <div
+              className="title"
+              style={{
+                color: design.couleurTitre,
+              }}
+            >
               <h2>{dataText.sujet}</h2>
             </div>
           )}

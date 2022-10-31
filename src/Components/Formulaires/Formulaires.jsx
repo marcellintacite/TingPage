@@ -1,7 +1,7 @@
 import React from "react";
 import Select from "react-select";
 import "./../../css/formulaire.css";
-export default function Formulaires({ data, handleSave }) {
+export default function Formulaires({ data, handleSave, onPdf }) {
   const options = [
     {
       value: "UCB",
@@ -33,7 +33,7 @@ export default function Formulaires({ data, handleSave }) {
 
   const handlesub = (e) => {
     e.preventDefault();
-    handleSave();
+    onPdf();
   };
 
   const handleChangeUni = (e) => {

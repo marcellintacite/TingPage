@@ -7,15 +7,40 @@ export default function Header({ dataText, design }) {
   )[0];
   console.log(dataText, design);
   return (
-    <div className="header_text">
-      <h3>REPUBLIQUE DEMOCRATIQUE DU CONGO</h3>
-      <h3>ENSEIGNEMENT SUPERIEUR ET UNIVERSITAIRE</h3>
-      {current && <h3>{current.title.toUpperCase()}</h3>}
-      {current && <h3>{current.bp}</h3>}
-      {current && <img src={current.logo} alt="logo université" />}
-      {dataText && <h3>{dataText.faculte.toUpperCase()}</h3>}
-      {dataText && <h3>{dataText.departement.toUpperCase()}</h3>}
-      {dataText && <h3>{dataText.cours.toUpperCase()}</h3>}
+    <div
+      className="header_text"
+      style={{
+        textAlign: "center",
+      }}
+    >
+      <h3 style={{ color: design.couleurText }}>
+        REPUBLIQUE DEMOCRATIQUE DU CONGO
+      </h3>
+      <h3 style={{ color: design.couleurText }}>
+        ENSEIGNEMENT SUPERIEUR ET UNIVERSITAIRE
+      </h3>
+      {current && (
+        <h3 style={{ color: design.couleurText }}>
+          {current.title.toUpperCase()}
+        </h3>
+      )}
+      {current && <h3 style={{ color: design.couleurText }}>{current.bp}</h3>}
+      {current && <img src={current.logo} alt="logo université" width={100} />}
+      {dataText && (
+        <h3 style={{ color: design.couleurText }}>
+          {dataText.faculte.toUpperCase()}
+        </h3>
+      )}
+      {dataText && (
+        <h3 style={{ color: design.couleurText }}>
+          {dataText.departement.toUpperCase()}
+        </h3>
+      )}
+      {dataText && (
+        <h3 style={{ color: design.couleurText }}>
+          {dataText.cours.toUpperCase()}
+        </h3>
+      )}
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 import Footer from "../common/Footer/Footer";
 import Navbar from "../common/Navbar/Navbar";
 import PageContext from "../../config/PageContext";
@@ -9,9 +9,17 @@ import Design from "../Design/Design";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 import Page from "../Page/Page";
+import TestPage from "../common/test/TestPage";
+import { savePDF } from "@progress/kendo-react-pdf";
 
 function Single(props) {
   const data = useContext(PageContext);
+
+  const contentArea = useRef();
+
+  const handleExportWithFunction = (event) => {
+    savePDF(contentArea.current, { paperSize: "A4" });
+  };
 
   const handleSave = () => {
     const ele = document.querySelector(".page");
@@ -56,12 +64,16 @@ function Single(props) {
               </div>
             </div>
             {currentCommand === "informations" && (
-              <Formulaires data={data} handleSave={handleSave} />
+              <Formulaires
+                data={data}
+                handleSave={handleSave}
+                onPdf={handleExportWithFunction}
+              />
             )}
             {currentCommand === "design" && <Design data={data} />}
           </div>
           <div className="right">
-            <Page data={data} />
+            <TestPage data={data} ref={contentArea} />
           </div>
         </div>
         <Footer />

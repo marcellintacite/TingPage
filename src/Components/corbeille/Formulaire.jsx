@@ -3,7 +3,7 @@ import logos from "../config/data";
 import LogoCard from "./common/LogoCard";
 import { options } from "../config/data";
 import Select from "react-select";
-function Formulaire({ data, setData, design, setDesign }) {
+function Formulaire({ data, setData, design, setDesign, onPdf }) {
   const handleChange = (e) => {
     const ndata = { ...data, [e.target.name]: e.target.value };
     setData(ndata);
