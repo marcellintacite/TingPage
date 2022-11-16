@@ -5,11 +5,13 @@ const cards = [
     id: 1,
     titre: "Page de garde université",
     img: img1,
+    lien: "single",
   },
   {
     id: 2,
     titre: "Page de garde secondaire",
     img: img2,
+    lien: "secondaire",
   },
   {
     id: 3,

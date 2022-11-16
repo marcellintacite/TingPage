@@ -1,9 +1,9 @@
 import React, { useRef } from "react";
 import { savePDF } from "@progress/kendo-react-pdf";
-import Header from "../../Page/Header";
-import "./../../../css/page.css";
-import icones from "../../../config/pngs";
-export default function TestPage({ data }) {
+import Header from "./Header";
+import "./../../css/page.css";
+import icones from "../../config/pngs";
+export default function Secondaire({ data }) {
   const { data: textData, design } = data;
   // console.log(textData, design);
   const contentArea = useRef();
@@ -63,7 +63,7 @@ export default function TestPage({ data }) {
               }}
             >
               <img
-                src={icones.BoyGraduation}
+                src={icones.rdc}
                 alt="graduation"
                 width={40}
                 style={{
@@ -73,7 +73,7 @@ export default function TestPage({ data }) {
                 }}
               />
               <img
-                src={icones.Certificate}
+                src={icones.armoire}
                 alt="graduation"
                 width={40}
                 style={{

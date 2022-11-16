@@ -6,6 +6,8 @@ import Compass from "./../assets/PNG/Compass.png";
 import DiscussionClass from "./../assets/PNG/DiscussionClass.png";
 import GraduationCap from "./../assets/PNG/GraduationCap.png";
 import Notes from "./../assets/PNG/Notes.png";
+import rdc from "./../assets/drapeau.jpg";
+import armoire from "./../assets/rdc.png";
 
 const icones = {
   book,
@@ -16,5 +18,7 @@ const icones = {
   DiscussionClass,
   GraduationCap,
   Notes,
+  rdc,
+  armoire,
 };
 export default icones;

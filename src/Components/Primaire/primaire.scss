@@ -1,0 +1,94 @@
+@import "./../../scss/config.scss";
+.single {
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+
+  .container {
+    width: 95%;
+    margin: auto;
+    .title {
+      width: auto;
+      position: relative;
+      margin-top: 15px;
+      margin-bottom: 15px;
+      h4 {
+        padding: 0;
+        margin: 0;
+      }
+      .line {
+        width: 50px;
+        bottom: -8px;
+        position: absolute;
+        height: 2px;
+        background: $primary;
+      }
+    }
+    .content_view {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      .left {
+        flex: 1;
+        .commands {
+          display: flex;
+          .command {
+            margin-right: 20px;
+            cursor: pointer;
+            padding-top: 5px;
+            padding-bottom: 5px;
+          }
+          .command.active {
+            color: $primardark;
+          }
+        }
+      }
+      .right {
+        flex: 1;
+        .btn {
+          margin-top: 20px;
+          margin-left: 10px;
+          height: 40px;
+          padding: 10px;
+          font-size: 16px;
+          background: $primardark;
+          border: none;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #fff;
+          border-radius: 5px;
+          &:hover {
+            transform: scale(0.9);
+            transition: all 0.1s ease-in;
+          }
+          &:focus {
+            box-shadow: 15px 5px 10px $primary;
+          }
+          cursor: pointer;
+          p {
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and(max-width:700px) {
+  .single {
+    .container {
+      .content_view {
+        flex-direction: column;
+        .right {
+          .btn {
+            width: 90%;
+            margin: auto;
+
+            margin-top: 20px;
+          }
+        }
+      }
+    }
+  }
+}

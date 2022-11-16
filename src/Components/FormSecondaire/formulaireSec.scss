@@ -1,0 +1,70 @@
+@import "../../scss/config.scss";
+.formulaire {
+  width: 90%;
+  margin: auto;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  padding: 10px;
+  border: 0.3px solid #3333;
+  animation: opening 1s ease;
+
+  @keyframes opening {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  h3 {
+    margin: 0;
+    text-align: center;
+    padding: 5px;
+  }
+  form {
+    width: 90%;
+    margin: auto;
+    .form_group {
+      width: 90%;
+      margin: auto;
+      margin-bottom: 8px;
+      .btn {
+        width: 100%;
+        outline: none;
+        background: $primardark;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        margin-top: 10px;
+        padding: 10px;
+        cursor: pointer;
+
+        &:hover {
+          transform: scale(1.07);
+          transition: all 0.1s ease-in;
+        }
+      }
+      .select {
+        width: 100%;
+      }
+      input {
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid $primary;
+        outline: none;
+
+        &:focus {
+          border: 2px solid rgb(138, 53, 235);
+          transition: all 0.07s ease-out;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .formulaire {
+  }
+}

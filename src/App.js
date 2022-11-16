@@ -6,6 +6,7 @@ import "@fortawesome/fontawesome-free/css/all.css";
 import Single from "./Components/Single/Single";
 import PageContext from "./config/PageContext";
 import "font-awesome/css/font-awesome.css";
+import Primaire from "./Components/Primaire/Primaire";
 export default function App() {
   const [data, setData] = useState({
     universite: "",
@@ -31,6 +32,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/single" element={<Single />} />
+          <Route path="/secondaire" element={<Primaire />} />
           <Route path="*" element={<Home />} />
         </Routes>
       </div>
