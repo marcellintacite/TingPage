@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import logos from "../config/data";
 import LogoCard from "./common/LogoCard";
 import { options } from "../config/data";

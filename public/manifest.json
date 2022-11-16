@@ -1,25 +1,38 @@
 {
-  "short_name": "PoetePlace",
-  "name": "Poète sans limite",
+  "name": "Ting Page",
+  "short_name": "Tingpage",
+  "theme_color": "#c6a0f8",
+  "background_color": "#ae73fc",
+  "display": "standalone",
+  "scope": "/",
+  "start_url": "/",
+
   "icons": [
     {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "src": "maskable_icon.png",
+      "sizes": "150x150",
+      "type": "image/png",
+      "purpose": "any maskable"
     },
     {
-      "src": "logo192.png",
+      "src": "logo_circle_192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "logo512.png",
+      "src": "logo_circle_256.png",
+      "type": "image/png",
+      "sizes": "256x256"
+    },
+    {
+      "src": "logo_circle_384.png",
+      "type": "image/png",
+      "sizes": "384x384"
+    },
+    {
+      "src": "logo_circle_512.png",
       "type": "image/png",
       "sizes": "512x512"
     }
-  ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "rgb(213, 30, 109)",
-  "background_color": "rgb(213, 30, 109)"
+  ]
 }

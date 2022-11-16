@@ -7,8 +7,7 @@ import "./../../css/single.css";
 import Design from "../Design/Design";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
-import Page from "../Page/Page";
-import TestPage from "../common/test/TestPage";
+
 import { savePDF } from "@progress/kendo-react-pdf";
 import Secondaire from "./Secondaire";
 

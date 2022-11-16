@@ -1,13 +1,7 @@
 import React from "react";
-import Select from "react-select";
 import "./../../css/formulaire.css";
 export default function FormulaireSecondaire({ data, handleSave, onPdf }) {
   const { data: formData, design, setData, setDesign } = data;
-
-  const handlesub = (e) => {
-    e.preventDefault();
-    onPdf();
-  };
 
   const handleChangeUni = (e) => {
     const ndata = { ...formData, universite: e.value };

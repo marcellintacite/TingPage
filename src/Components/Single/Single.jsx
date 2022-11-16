@@ -2,13 +2,11 @@ import React, { useContext, useRef, useState } from "react";
 import Footer from "../common/Footer/Footer";
 import Navbar from "../common/Navbar/Navbar";
 import PageContext from "../../config/PageContext";
-import Select from "react-select";
 import Formulaires from "../Formulaires/Formulaires";
 import "./../../css/single.css";
 import Design from "../Design/Design";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
-import Page from "../Page/Page";
 import TestPage from "../common/test/TestPage";
 import { savePDF } from "@progress/kendo-react-pdf";
 
