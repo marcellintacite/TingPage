@@ -5,6 +5,7 @@ import "./css/style.css";
 import "@fortawesome/fontawesome-free/css/all.css";
 import Single from "./Components/Single/Single";
 import PageContext from "./config/PageContext";
+import "font-awesome/css/font-awesome.css";
 export default function App() {
   const [data, setData] = useState({
     universite: "",

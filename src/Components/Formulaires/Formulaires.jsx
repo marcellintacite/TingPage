@@ -137,11 +137,6 @@ export default function Formulaires({ data, handleSave, onPdf }) {
             placeholder="Ex : 2022-2023"
           />
         </div>
-        <div className="form_group">
-          <button className="btn" onClick={(e) => handlesub(e)}>
-            Télécharger ma page
-          </button>
-        </div>
       </form>
     </div>
   );

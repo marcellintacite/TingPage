@@ -5,7 +5,6 @@ export default function Header({ dataText, design }) {
   const current = dataUniversite.filter(
     (u) => u.label === dataText.universite
   )[0];
-  console.log(dataText, design);
   return (
     <div
       className="header_text"
@@ -25,9 +24,16 @@ export default function Header({ dataText, design }) {
         </h3>
       )}
       {current && <h3 style={{ color: design.couleurText }}>{current.bp}</h3>}
-      {current && <img src={current.logo} alt="logo université" width={100} />}
+      {current && <img src={current.logo} alt="logo université" width={80} />}
       {dataText && (
-        <h3 style={{ color: design.couleurText }}>
+        <h3
+          style={{
+            color: design.couleurText,
+            width: "80%",
+            margin: "auto",
+            paddingTop: 5,
+          }}
+        >
           {dataText.faculte.toUpperCase()}
         </h3>
       )}
