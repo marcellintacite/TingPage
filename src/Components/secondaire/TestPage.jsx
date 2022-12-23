@@ -15,7 +15,7 @@ export default function TestPage({ data }) {
     });
   };
 
-  console.log(design);
+  console.log(textData);
   return (
     <div
       style={{
@@ -130,6 +130,18 @@ export default function TestPage({ data }) {
                   </span>{" "}
                 </p>
               )}
+              {textData.promotion && (
+                <p>
+                  Promotion :{" "}
+                  <span
+                    style={{
+                      fontWeight: "700",
+                    }}
+                  >
+                    {textData.promotion}
+                  </span>{" "}
+                </p>
+              )}
               {textData.titulaire && (
                 <p>
                   Dirigé par{" "}
@@ -154,7 +166,8 @@ export default function TestPage({ data }) {
                 <div
                   className="circle"
                   style={{
-                    marginTop: 80,
+                    marginTop: 90,
+                    paddingBottom: 10,
                   }}
                 >
                   <h3

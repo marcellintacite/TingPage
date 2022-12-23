@@ -6,8 +6,9 @@ import "@fortawesome/fontawesome-free/css/all.css";
 import Single from "./Components/Single/Single";
 import PageContext from "./config/PageContext";
 import "font-awesome/css/font-awesome.css";
-import Primaire from "./Components/Primaire/Primaire";
+import About from "./Components/apropos/About";
 export default function App() {
+  const [currentPage, setCurrentpage] = useState("");
   const [data, setData] = useState({
     universite: "",
     faculte: "",
@@ -16,6 +17,7 @@ export default function App() {
     sujet: "",
     nom: "",
     titulaire: "",
+
     anne: "",
   });
   const [design, setDesign] = useState({
@@ -27,12 +29,14 @@ export default function App() {
     position: "gauche",
   });
   return (
-    <PageContext.Provider value={{ data, setData, design, setDesign }}>
+    <PageContext.Provider
+      value={{ data, setData, design, setDesign, currentPage, setCurrentpage }}
+    >
       <div className="app">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/single" element={<Single />} />
-          <Route path="/secondaire" element={<Primaire />} />
+          <Route path="/about" element={<About />} />
           <Route path="*" element={<Home />} />
         </Routes>
       </div>

@@ -2,9 +2,8 @@ import React, { useRef } from "react";
 import { savePDF } from "@progress/kendo-react-pdf";
 import Header from "./Header";
 import "./../../css/page.css";
-import icones from "../../config/pngs";
-export default function Secondaire({ data }) {
-  const { data: textData, design } = data;
+import b from "./../../assets/bor.png";
+export default function TestPage({ data: textData, design }) {
   // console.log(textData, design);
   const contentArea = useRef();
   const handleExportWithFunction = (event) => {
@@ -15,7 +14,7 @@ export default function Secondaire({ data }) {
     });
   };
 
-  console.log(design);
+  console.log(textData);
   return (
     <div
       style={{
@@ -31,6 +30,9 @@ export default function Secondaire({ data }) {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
+          background: `url(${design.imgBg})`,
+
+          border: design.imgBg ? "2px solid #3333" : null,
         }}
         ref={contentArea}
       >
@@ -39,51 +41,17 @@ export default function Secondaire({ data }) {
             height: "100%",
             width: "96%",
             margin: "auto",
-            border: `1px solid grey`,
+            border: design.imgBg ? null : `1px solid grey`,
             borderColor: design.couleurBordure,
             paddingBottom: 5,
-            borderWidth: parseInt(design.tailleBordure),
+            borderWidth: design.imgBg ? null : parseInt(design.tailleBordure),
             position: "relative",
             marginTop: 20,
-            background: design.bg,
+
+            backgroundPosition: "center",
+            backgroundSize: "cover",
           }}
         >
-          <div
-            style={{
-              position: "absolute",
-              zIndex: 0,
-              opacity: 0.3,
-              width: "100%",
-              height: "100%",
-            }}
-          >
-            <div
-              style={{
-                position: "relative",
-              }}
-            >
-              <img
-                src={icones.rdc}
-                alt="graduation"
-                width={40}
-                style={{
-                  position: "absolute",
-                  top: 20,
-                  left: 10,
-                }}
-              />
-              <img
-                src={icones.armoire}
-                alt="graduation"
-                width={40}
-                style={{
-                  position: "absolute",
-                  top: 10,
-                  right: 10,
-                }}
-              />
-            </div>
-          </div>
           <Header dataText={textData} design={design} />
           <div
             id="title"
@@ -99,7 +67,9 @@ export default function Secondaire({ data }) {
               borderRadius: 3,
             }}
           >
-            {textData.sujet ? <h2>{textData.sujet}</h2> : null}
+            {textData.sujet ? (
+              <h2 style={{ width: "100%" }}>{textData.sujet}</h2>
+            ) : null}
           </div>
 
           <div
@@ -120,13 +90,25 @@ export default function Secondaire({ data }) {
             >
               {textData.nom && (
                 <p>
-                  Fais par{" "}
+                  Fait par{" "}
                   <span
                     style={{
                       fontWeight: "700",
                     }}
                   >
                     {textData.nom}
+                  </span>{" "}
+                </p>
+              )}
+              {textData.promotion && (
+                <p>
+                  Promotion :{" "}
+                  <span
+                    style={{
+                      fontWeight: "700",
+                    }}
+                  >
+                    {textData.promotion}
                   </span>{" "}
                 </p>
               )}
@@ -154,7 +136,8 @@ export default function Secondaire({ data }) {
                 <div
                   className="circle"
                   style={{
-                    marginTop: 80,
+                    marginTop: 100,
+                    paddingBottom: 10,
                   }}
                 >
                   <h3

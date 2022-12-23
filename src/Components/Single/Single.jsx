@@ -1,17 +1,35 @@
 import React, { useContext, useRef, useState } from "react";
 import Footer from "../common/Footer/Footer";
 import Navbar from "../common/Navbar/Navbar";
-import PageContext from "../../config/PageContext";
-import Formulaires from "../Formulaires/Formulaires";
+import Formulaires from "./Formulaires/Formulaires";
 import "./../../css/single.css";
-import Design from "../Design/Design";
+import Design from "./Design/Design";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
-import TestPage from "../common/test/TestPage";
+import TestPage from "./TestPage";
 import { savePDF } from "@progress/kendo-react-pdf";
 
 function Single(props) {
-  const data = useContext(PageContext);
+  //data for the app
+  const [data, setData] = useState({
+    universite: "",
+    faculte: "",
+    departement: "",
+    cours: "",
+    sujet: "",
+    nom: "",
+    titulaire: "",
+    anne: "",
+  });
+  console.log(data);
+  const [design, setDesign] = useState({
+    bg: "#fff",
+    couleurText: "#333",
+    couleurBordure: "#000",
+    couleurTitre: "#222",
+    tailleBordure: 4,
+    position: "gauche",
+  });
 
   const contentArea = useRef();
 
@@ -66,12 +84,15 @@ function Single(props) {
                 data={data}
                 handleSave={handleSave}
                 onPdf={handleExportWithFunction}
+                setData={setData}
               />
             )}
-            {currentCommand === "design" && <Design data={data} />}
+            {currentCommand === "design" && (
+              <Design design={design} setDesign={setDesign} />
+            )}
           </div>
           <div className="right">
-            <TestPage data={data} ref={contentArea} />
+            <TestPage data={data} ref={contentArea} design={design} />
           </div>
         </div>
         <Footer />

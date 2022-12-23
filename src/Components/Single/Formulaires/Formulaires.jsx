@@ -1,7 +1,12 @@
 import React from "react";
 import Select from "react-select";
-import "./../../css/formulaire.css";
-export default function Formulaires({ data, handleSave, onPdf }) {
+import "./../../../css/formulaire.css";
+export default function Formulaires({
+  data: formData,
+  handleSave,
+  onPdf,
+  setData,
+}) {
   const options = [
     {
       value: "UCB",
@@ -29,8 +34,7 @@ export default function Formulaires({ data, handleSave, onPdf }) {
     },
   ];
 
-  const { data: formData, design, setData, setDesign } = data;
-
+  console.log(formData);
   const handlesub = (e) => {
     e.preventDefault();
     onPdf();
@@ -124,6 +128,16 @@ export default function Formulaires({ data, handleSave, onPdf }) {
             name="titulaire"
             id=""
             placeholder="Ex : Ass. Kanyaku Kilola"
+          />
+        </div>
+        <div className="form_group">
+          <label htmlFor="promotion">Promotion : </label>
+          <input
+            onChange={(e) => handleChange(e)}
+            type="text"
+            name="promotion"
+            id=""
+            placeholder="Bac 2 info"
           />
         </div>
         <div className="form_group">

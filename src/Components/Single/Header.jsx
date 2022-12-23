@@ -12,10 +12,10 @@ export default function Header({ dataText, design }) {
         textAlign: "center",
       }}
     >
-      <h3 style={{ color: design.couleurText }}>
+      <h3 style={{ color: design.couleurText, padding: 8, margin: 0 }}>
         REPUBLIQUE DEMOCRATIQUE DU CONGO
       </h3>
-      <h3 style={{ color: design.couleurText }}>
+      <h3 style={{ color: design.couleurText, padding: 0, margin: 0 }}>
         ENSEIGNEMENT SUPERIEUR ET UNIVERSITAIRE
       </h3>
       {current && (
@@ -43,7 +43,14 @@ export default function Header({ dataText, design }) {
         </h3>
       )}
       {dataText && (
-        <h3 style={{ color: design.couleurText }}>
+        <h3
+          style={{
+            color: design.couleurText,
+            width: "80%",
+            margin: "auto",
+            paddingTop: 5,
+          }}
+        >
           {dataText.cours.toUpperCase()}
         </h3>
       )}

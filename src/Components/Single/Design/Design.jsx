@@ -1,8 +1,8 @@
 import React from "react";
-import "./../../css/design.css";
+import "./../../../css/design.css";
 import Select from "react-select";
-export default function Design({ data }) {
-  const { design, setDesign } = data;
+import { bgs } from "./data";
+export default function Design({ design, setDesign }) {
   const s = [
     {
       label: "Gauche",
@@ -25,6 +25,12 @@ export default function Design({ data }) {
   };
   const handleSelect = (e) => {
     const ndata = { ...design, position: e.value };
+    setDesign(ndata);
+  };
+
+  const handleBg = (img) => {
+    const ndata = { ...design, imgBg: img, bg: "" };
+    console.log(img);
     setDesign(ndata);
   };
 
@@ -95,6 +101,16 @@ export default function Design({ data }) {
           </div>
         </div>
       </form>
+      <div className="content_bg">
+        <h3>Background img :</h3>
+        <div className="bg_chooser">
+          {bgs.map((i) => (
+            <div className="bg_card" onClick={() => handleBg(i)}>
+              <img src={i} alt="bg" />
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }

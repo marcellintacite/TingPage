@@ -4,6 +4,7 @@ import "./../../css/page.css";
 
 export default function Page({ data }) {
   const { data: dataText, design } = data;
+  console.log(dataText);
   return (
     <div
       className="page"
@@ -38,6 +39,11 @@ export default function Page({ data }) {
             {dataText && (
               <p>
                 Fais par <span>{dataText.nom}</span>{" "}
+              </p>
+            )}
+            {dataText.promotion && (
+              <p>
+                Promotion: <span>{dataText.promotion}</span>{" "}
               </p>
             )}
             {dataText && (

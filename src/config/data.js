@@ -19,7 +19,7 @@ export const dataUniversite = [
     id: 2,
     label: "UOB",
     title: "Université Officielle de Bukavu",
-    bp: "258 Bukavu",
+    bp: "285 Bukavu",
     logo: uob,
   },
   {
@@ -47,7 +47,7 @@ export const dataUniversite = [
     id: 6,
     label: "UEA",
     title: "Université Evangélique de Bukavu",
-    bp: "258 Bukavu",
+    bp: "3323 Bukavu",
     logo: uea,
   },
 ];

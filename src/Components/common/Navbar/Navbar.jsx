@@ -40,7 +40,7 @@ function Navbar() {
           </li>
           <li>
             <NavLink
-              to="/apropos"
+              to="/about"
               className={({ isActive }) => isActive && "active"}
             >
               A propos
