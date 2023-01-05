@@ -1,16 +1,18 @@
 import React, { useRef } from "react";
 import { savePDF } from "@progress/kendo-react-pdf";
-import Header from "../../Page/Header";
-import "./../../../css/page.css";
-import icones from "../../../config/pngs";
-export default function TestPage({ data }) {
-  const { data: textData, design } = data;
+import Header from "./Header";
+import "./../../css/page.css";
+import drapeau from "./../../assets/drapeau.jpg";
+import rdc from "./../../assets/rdc.png";
+export default function TestPage({ data: textData, design }) {
   // console.log(textData, design);
   const contentArea = useRef();
   const handleExportWithFunction = (event) => {
     savePDF(contentArea.current, {
       paperSize: "A4",
       margin: "10px 15px",
+      scale: 1,
+
       fileName: textData.nom,
     });
   };
@@ -31,6 +33,11 @@ export default function TestPage({ data }) {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
+          background: `url(${design.imgBg})`,
+          backgroundPosition: "center",
+          backgroundSize: "cover",
+          border: design.imgBg ? "2px solid #3333" : null,
+          marginTop: 10,
         }}
         ref={contentArea}
       >
@@ -39,50 +46,43 @@ export default function TestPage({ data }) {
             height: "100%",
             width: "96%",
             margin: "auto",
-            border: `1px solid grey`,
+            border: design.imgBg ? null : `1px solid grey`,
             borderColor: design.couleurBordure,
-            paddingBottom: 5,
-            borderWidth: parseInt(design.tailleBordure),
+            paddingBottom: 20,
+            borderWidth: design.imgBg ? null : parseInt(design.tailleBordure),
             position: "relative",
             marginTop: 20,
-            background: design.bg,
+            backgroundPosition: "center",
+            backgroundSize: "cover",
           }}
         >
           <div
+            className="logo"
             style={{
               position: "absolute",
-              zIndex: 0,
-              opacity: 0.3,
+              display: "flex",
               width: "100%",
-              height: "100%",
+              top: 10,
+              left: 10,
+              right: 10,
+              justifyContent: "space-between",
             }}
           >
-            <div
+            <img
+              src={drapeau}
+              alt="drapeau RDC"
               style={{
-                position: "relative",
+                height: 40,
               }}
-            >
-              <img
-                src={icones.BoyGraduation}
-                alt="graduation"
-                width={40}
-                style={{
-                  position: "absolute",
-                  top: 20,
-                  left: 10,
-                }}
-              />
-              <img
-                src={icones.Certificate}
-                alt="graduation"
-                width={40}
-                style={{
-                  position: "absolute",
-                  top: 10,
-                  right: 10,
-                }}
-              />
-            </div>
+            />
+            <img
+              src={rdc}
+              alt="drapeau RDC"
+              style={{
+                height: 40,
+                marginRight: 20,
+              }}
+            />
           </div>
           <Header dataText={textData} design={design} />
           <div
@@ -91,7 +91,7 @@ export default function TestPage({ data }) {
             style={{
               width: "80%",
               margin: "auto",
-              marginTop: 15,
+              marginTop: 25,
               textAlign: "center",
               padding: 5,
               color: design.couleurTitre,
@@ -99,7 +99,9 @@ export default function TestPage({ data }) {
               borderRadius: 3,
             }}
           >
-            {textData.sujet ? <h2>{textData.sujet}</h2> : null}
+            {textData.sujet ? (
+              <h2 style={{ width: "100%" }}>{textData.sujet}</h2>
+            ) : null}
           </div>
 
           <div
@@ -120,7 +122,7 @@ export default function TestPage({ data }) {
             >
               {textData.nom && (
                 <p>
-                  Fais par{" "}
+                  Fait par{" "}
                   <span
                     style={{
                       fontWeight: "700",
@@ -132,7 +134,7 @@ export default function TestPage({ data }) {
               )}
               {textData.promotion && (
                 <p>
-                  Promotion :{" "}
+                  Classe :{" "}
                   <span
                     style={{
                       fontWeight: "700",
@@ -160,13 +162,13 @@ export default function TestPage({ data }) {
                 className="foot"
                 style={{
                   textAlign: "center",
-                  paddingTop: 50,
+                  paddingTop: 100,
                 }}
               >
                 <div
                   className="circle"
                   style={{
-                    marginTop: 90,
+                    marginTop: 100,
                     paddingBottom: 10,
                   }}
                 >

@@ -31,7 +31,8 @@ export default function TestPage({ data: textData, design }) {
           alignItems: "center",
           justifyContent: "center",
           background: `url(${design.imgBg})`,
-
+          backgroundPosition: "center",
+          backgroundSize: "cover",
           border: design.imgBg ? "2px solid #3333" : null,
         }}
         ref={contentArea}

@@ -12,7 +12,7 @@ export default function Header({ dataText, design }) {
         textAlign: "center",
       }}
     >
-      <h3 style={{ color: design.couleurText, padding: 8, margin: 0 }}>
+      <h3 style={{ color: design.couleurText, padding: 5, margin: 0 }}>
         REPUBLIQUE DEMOCRATIQUE DU CONGO
       </h3>
       <h3 style={{ color: design.couleurText, padding: 0, margin: 0 }}>
@@ -24,7 +24,7 @@ export default function Header({ dataText, design }) {
         </h3>
       )}
       {current && <h3 style={{ color: design.couleurText }}>{current.bp}</h3>}
-      {current && <img src={current.logo} alt="logo université" width={80} />}
+      {current && <img src={current.logo} alt="logo université" width={70} />}
       {dataText && (
         <h3
           style={{

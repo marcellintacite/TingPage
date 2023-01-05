@@ -1,3 +1,118 @@
-.about {
+.content_about {
   width: 100%;
+  min-height: 100vh;
+  padding: 1rem;
+  animation: apa 0.7s ease-in;
+
+  @keyframes apa {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .first,
+  .second {
+    width: 95%;
+    margin: auto;
+    height: 60vh;
+    margin-top: 1rem;
+
+    display: flex;
+    .left,
+    .right {
+      flex: 1;
+    }
+    .left {
+      .social {
+        width: 100%;
+
+        .gdsc,
+        .tacite {
+          width: 90%;
+          margin-top: 10px;
+          h5 {
+            padding: 0;
+            color: #433;
+            margin: 0;
+          }
+          .icons {
+            padding-top: 10px;
+            display: flex;
+            a {
+              width: 30px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              height: 30px;
+              text-decoration: none;
+              color: #fff;
+              margin-right: 10px;
+              background-color: #af7bf6;
+
+              &:hover {
+                background-color: #fff;
+                border: 1px solid #af7bf6;
+                border-radius: 5px;
+                transition: all 0.2s ease-in;
+                color: #000;
+              }
+            }
+          }
+        }
+      }
+      .title {
+        position: relative;
+        .line {
+          position: absolute;
+          width: 30%;
+          height: 2px;
+          border-radius: 5px;
+          background-color: #af7bf6;
+          top: 40px;
+        }
+        h2 {
+          font-size: 28px;
+        }
+      }
+    }
+    .right {
+      height: 100%;
+      padding: 10px;
+      .container {
+        height: 95%;
+        margin: auto;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #f3e8ff;
+        border-radius: 10px;
+        img {
+          height: 90%;
+        }
+      }
+    }
+  }
+  .second {
+    flex-direction: row-reverse;
+    margin-top: 2rem;
+  }
+
+  @media screen and(max-width:695px) {
+    min-height: 100vh;
+    padding: 5px;
+    .first,
+    .second {
+      flex-direction: column;
+      min-height: 100vh;
+
+      .right {
+        height: 200px;
+        margin-top: 10px;
+      }
+    }
+  }
 }
