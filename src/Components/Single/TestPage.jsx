@@ -3,6 +3,7 @@ import { savePDF } from "@progress/kendo-react-pdf";
 import Header from "./Header";
 import "./../../css/page.css";
 import b from "./../../assets/bor.png";
+import ReactGA from "react-ga";
 export default function TestPage({ data: textData, design }) {
   // console.log(textData, design);
   const contentArea = useRef();
@@ -11,6 +12,10 @@ export default function TestPage({ data: textData, design }) {
       paperSize: "A4",
       margin: "10px 15px",
       fileName: textData.nom,
+    });
+    ReactGA.event({
+      category: "Download",
+      action: "Telechargement de la page",
     });
   };
 
