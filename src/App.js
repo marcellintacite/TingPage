@@ -9,6 +9,7 @@ import About from "./Components/apropos/About";
 import Secondaire from "./Components/secondaire/Secondaire";
 import Contact from "./Components/Contact/Contact";
 import ScrollToTop from "./Components/common/Scroll";
+import Multiple from "./Components/Multiple/Multiple";
 
 import ReactGA from "react-ga";
 
@@ -22,8 +23,10 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/single" element={<Single />} />
         <Route path="/secondaire" element={<Secondaire />} />
+        <Route path="/multiple" element={<Multiple />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+
         <Route path="*" element={<Home />} />
       </Routes>
     </div>

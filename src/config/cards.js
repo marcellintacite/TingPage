@@ -15,8 +15,9 @@ const cards = [
   },
   {
     id: 3,
-    titre: "Page de garde TFC",
+    titre: "Page de garde groupe",
     img: img1,
+    lien: "multiple",
   },
   {
     id: 4,
