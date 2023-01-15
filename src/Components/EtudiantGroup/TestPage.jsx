@@ -2,8 +2,8 @@ import React, { useRef } from "react";
 import { savePDF } from "@progress/kendo-react-pdf";
 import Header from "./Header";
 import "./../../css/page.css";
-import drapeau from "./../../assets/drapeau.jpg";
-import rdc from "./../../assets/rdc.png";
+import b from "./../../assets/bor.png";
+import ReactGA from "react-ga";
 export default function TestPage({ data: textData, design }) {
   const values = Object.values(textData.noms);
 
@@ -14,11 +14,14 @@ export default function TestPage({ data: textData, design }) {
     savePDF(contentArea.current, {
       paperSize: "A4",
       margin: "10px 15px",
-      scale: 1,
-
       fileName: textData.nom,
     });
+    ReactGA.event({
+      category: "Download",
+      action: "Telechargement de la page",
+    });
   };
+
   return (
     <div
       style={{
@@ -38,7 +41,6 @@ export default function TestPage({ data: textData, design }) {
           backgroundPosition: "center",
           backgroundSize: "cover",
           border: design.imgBg ? "2px solid #3333" : null,
-          marginTop: 10,
         }}
         ref={contentArea}
       >
@@ -49,42 +51,15 @@ export default function TestPage({ data: textData, design }) {
             margin: "auto",
             border: design.imgBg ? null : `1px solid grey`,
             borderColor: design.couleurBordure,
-            paddingBottom: 10,
+            paddingBottom: 5,
             borderWidth: design.imgBg ? null : parseInt(design.tailleBordure),
             position: "relative",
-            marginTop: 10,
+            marginTop: 20,
+
             backgroundPosition: "center",
             backgroundSize: "cover",
           }}
         >
-          <div
-            className="logo"
-            style={{
-              position: "absolute",
-              display: "flex",
-              width: "100%",
-              top: 10,
-              left: 10,
-              right: 10,
-              justifyContent: "space-between",
-            }}
-          >
-            <img
-              src={drapeau}
-              alt="drapeau RDC"
-              style={{
-                height: 40,
-              }}
-            />
-            <img
-              src={rdc}
-              alt="drapeau RDC"
-              style={{
-                height: 40,
-                marginRight: 20,
-              }}
-            />
-          </div>
           <Header dataText={textData} design={design} />
           <div
             id="title"
@@ -97,7 +72,7 @@ export default function TestPage({ data: textData, design }) {
               padding: 5,
               color: design.couleurTitre,
               border: "1px solid #333",
-              borderRadius: 4,
+              borderRadius: 3,
             }}
           >
             {textData.sujet ? (
@@ -118,15 +93,14 @@ export default function TestPage({ data: textData, design }) {
               width: "81%",
               fontSize: 16,
               margin: "auto",
-              marginTop: 20,
+              marginTop: 40,
             }}
           >
             <div
               style={{
                 float: design.position === "Gauche" ? "left" : "right",
                 transition: "all 0.3s ease",
-                fontSize: values.length <= 3 ? 18 : 14,
-                color: design.couleurText,
+                fontSize: 16,
               }}
             >
               {textData.noms && (
@@ -149,11 +123,10 @@ export default function TestPage({ data: textData, design }) {
               )}
               {textData.promotion && (
                 <p>
-                  Classe :{" "}
+                  Promotion :{" "}
                   <span
                     style={{
                       fontWeight: "700",
-                      fontSize: values.length <= 3 ? 18 : 14,
                     }}
                   >
                     {textData.promotion}
@@ -161,12 +134,11 @@ export default function TestPage({ data: textData, design }) {
                 </p>
               )}
               {textData.titulaire && (
-                <p style={{ fontSize: values.length <= 3 ? 18 : 14 }}>
+                <p>
                   Dirigé par{" "}
                   <span
                     style={{
                       fontWeight: "700",
-                      fontSize: values.length <= 3 ? 18 : 14,
                     }}
                   >
                     {textData.titulaire}
@@ -179,24 +151,21 @@ export default function TestPage({ data: textData, design }) {
                 className="foot"
                 style={{
                   textAlign: "center",
-                  paddingTop:
-                    values.length <= 3 ? 130 : 130 + values.length * 3,
+                  paddingTop: 50,
                 }}
               >
                 <div
                   className="circle"
                   style={{
                     marginTop:
-                      values.length <= 3 ? 200 : 150 + values.length * 3,
+                      values.length <= 3 ? 200 : 200 + values.length * 5,
                     paddingBottom: 10,
                   }}
                 >
                   <h3
                     style={{
                       border: "1px dashed #333",
-                      borderColor: design.couleurText && design.couleurText,
                       padding: 5,
-                      color: design.couleurText,
                     }}
                   >
                     ANNEE ACADEMIQUE : {textData.anne}

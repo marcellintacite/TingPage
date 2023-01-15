@@ -12,6 +12,7 @@ import ScrollToTop from "./Components/common/Scroll";
 import Multiple from "./Components/Multiple/Multiple";
 
 import ReactGA from "react-ga";
+import EtudiantsGroup from "./Components/EtudiantGroup/Single";
 
 export default function App() {
   const TRACKING_ID = "348552975"; // YOUR_OWN_TRACKING_ID
@@ -24,6 +25,7 @@ export default function App() {
         <Route path="/single" element={<Single />} />
         <Route path="/secondaire" element={<Secondaire />} />
         <Route path="/multiple" element={<Multiple />} />
+        <Route path="/etudiantGroupe" element={<EtudiantsGroup />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
 

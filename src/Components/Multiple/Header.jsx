@@ -7,23 +7,41 @@ export default function Header({ dataText, design }) {
       className="header_text"
       style={{
         textAlign: "center",
-        marginTop: 25,
+        marginTop: 20,
       }}
     >
-      <h3 style={{ color: design.couleurText, padding: 5, margin: 0 }}>
+      <h3
+        style={{
+          color: design.couleurText,
+          padding: 5,
+          margin: 0,
+        }}
+      >
         REPUBLIQUE DEMOCRATIQUE DU CONGO
       </h3>
-      <h3 style={{ color: design.couleurText, padding: 0, margin: 0 }}>
+      <h3
+        style={{
+          color: design.couleurText,
+          padding: 0,
+          margin: 0,
+        }}
+      >
         ENSEIGNEMENT PRIMAIRE, SECONDAIRE ET TECHNIQUE
       </h3>
       {dataText && (
-        <h3 style={{ color: design.couleurText }}>
+        <h3
+          style={{
+            color: design.couleurText,
+            padding: 0,
+            margin: 0,
+          }}
+        >
           {dataText.ecole.toUpperCase()}
         </h3>
       )}
 
       {dataText && (
-        <h3 style={{ color: design.couleurText }}>
+        <h3 style={{ color: design.couleurText, margin: 0 }}>
           {dataText.boitePostal.toUpperCase()}
         </h3>
       )}

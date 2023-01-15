@@ -100,29 +100,6 @@ export default function Design({ design, setDesign }) {
             />
           </div>
         </div>
-        {/* Nouveau */}
-        <div className="group">
-          <div className="form_control">
-            <label htmlFor="tailleBordure">Taille titre :</label>
-            <input
-              type="number"
-              className="bordure"
-              name="tailleTitre"
-              min={0}
-              max={40}
-              value={design.tailleTitre}
-              onChange={(e) => handleChange(e)}
-            />
-          </div>
-          <div className="form_control">
-            {/* <label htmlFor="position">Position nom:</label>
-            <Select
-              options={s}
-              name="position"
-              onChange={(e) => handleSelect(e)}
-            /> */}
-          </div>
-        </div>
       </form>
       <div className="content_bg">
         <h3>Background img :</h3>

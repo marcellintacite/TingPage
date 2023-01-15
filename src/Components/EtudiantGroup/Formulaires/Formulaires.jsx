@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Select from "react-select";
 import "./../../../css/formulaire.css";
 export default function Formulaires({
   data: formData,
@@ -6,14 +7,37 @@ export default function Formulaires({
   onPdf,
   setData,
 }) {
+  const options = [
+    {
+      value: "UCB",
+      label: "Université Catholique de Bukavu (UCB)",
+    },
+    {
+      value: "UEA",
+      label: "Université Evangélique de Bukavu (UEA)",
+    },
+    {
+      value: "UOB",
+      label: "Université Officielle de Bukavu (UOB)",
+    },
+    {
+      value: "ISP",
+      label: "Institut Supérieur Pédagogique (ISP)",
+    },
+    {
+      value: "ISC",
+      label: "Institut Supérieur de Commerce(ISC)",
+    },
+    {
+      value: "ISDR",
+      label: "Institut Supérieur de devéloppement rural",
+    },
+  ];
+
   const [inputFields, setInputFields] = useState([
     { name: "input1", valeur: "" },
   ]);
 
-  const handleChange = (e) => {
-    const ndata = { ...formData, [e.target.name]: e.target.value };
-    setData(ndata);
-  };
   const handleAdd = () => {
     const nom = `input${inputFields.length + 1}`;
     console.log(nom);
@@ -36,35 +60,55 @@ export default function Formulaires({
     const nomsN = { ...n, [e.target.name]: e.target.value };
     setData({ ...formData, noms: nomsN });
   };
+  console.log(formData);
+
+  const handleChangeUni = (e) => {
+    const ndata = { ...formData, universite: e.value };
+    setData(ndata);
+  };
+  const handleChange = (e) => {
+    const ndata = { ...formData, [e.target.name]: e.target.value };
+    setData(ndata);
+  };
   return (
     <div className="formulaire">
       <h3>Mes informations</h3>
       <form action="">
         <div className="form_group">
-          <label htmlFor="ecole">Saisir votre école : </label>
-          <input
-            onChange={(e) => handleChange(e)}
-            type="text"
-            value={formData.ecole}
-            name="ecole"
-            required
-            id=""
-            placeholder="Ex : Ecole d'application"
+          <label htmlFor="universite">Choisir une institution</label>
+          <Select
+            options={options}
+            placeholder="Choisir votre université"
+            className="select"
+            name="universite"
+            onChange={(e) => handleChangeUni(e)}
           />
         </div>
         <div className="form_group">
-          <label htmlFor="boitePostal">Boite postal : </label>
+          <label htmlFor="faculte">Saisir votre faculté : </label>
           <input
             onChange={(e) => handleChange(e)}
             type="text"
-            value={formData.boitePostal}
-            name="boitePostal"
+            value={formData.faculte}
+            name="faculte"
+            required
+            id=""
+            placeholder="Ex : faculté de sciences"
+          />
+        </div>
+        <div className="form_group">
+          <label htmlFor="departement">Saisir votre département : </label>
+          <input
+            onChange={(e) => handleChange(e)}
+            type="text"
+            value={formData.departement}
+            name="departement"
             id=""
             placeholder="Ex : département d'informatique"
           />
         </div>
         <div className="form_group">
-          <label htmlFor="cours">Cours : </label>
+          <label htmlFor="cours">Type de travail /cours : </label>
           <input
             onChange={(e) => handleChange(e)}
             type="text"
@@ -72,19 +116,7 @@ export default function Formulaires({
             name="cours"
             value={formData.cours}
             id=""
-            placeholder="Ex : Géographie"
-          />
-        </div>
-        <div className="form_group">
-          <label htmlFor="section">Section : </label>
-          <input
-            onChange={(e) => handleChange(e)}
-            type="text"
-            required
-            name="section"
-            value={formData.section}
-            id=""
-            placeholder="Ex : Commeciale et gestion"
+            placeholder="Ex : TP/TD de physique"
           />
         </div>
         <div className="form_group">
@@ -96,7 +128,7 @@ export default function Formulaires({
             value={formData.sujet}
             id=""
             required
-            placeholder="Ex : Les bantous"
+            placeholder="Ex : Les lentilles"
           />
         </div>
         <div className="groupe">
@@ -130,7 +162,6 @@ export default function Formulaires({
             </div>
           ))}
         </div>
-
         <div className="form_group">
           <label htmlFor="titulaire">Nom titulaire du cours : </label>
           <input
@@ -142,13 +173,13 @@ export default function Formulaires({
           />
         </div>
         <div className="form_group">
-          <label htmlFor="promotion">Classe : </label>
+          <label htmlFor="promotion">Promotion : </label>
           <input
             onChange={(e) => handleChange(e)}
             type="text"
             name="promotion"
             id=""
-            placeholder="4ième CG"
+            placeholder="Bac 2 info"
           />
         </div>
         <div className="form_group">

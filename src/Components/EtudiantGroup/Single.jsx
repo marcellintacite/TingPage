@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef, useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 import Footer from "../common/Footer/Footer";
 import Navbar from "../common/Navbar/Navbar";
 import Formulaires from "./Formulaires/Formulaires";
@@ -9,27 +9,27 @@ import jsPDF from "jspdf";
 import TestPage from "./TestPage";
 import { savePDF } from "@progress/kendo-react-pdf";
 
-function Multiple(props) {
+function EtudiantsGroup(props) {
   //data for the app
   const [data, setData] = useState({
-    ecole: "",
-    boitePostal: "",
-    section: "",
+    universite: "",
+    faculte: "",
+    departement: "",
     cours: "",
     sujet: "",
     noms: {},
     titulaire: "",
     anne: "",
   });
-
+  console.log(data);
   const [design, setDesign] = useState({
     bg: "#fff",
     couleurText: "#333",
     couleurBordure: "#000",
     couleurTitre: "#222",
     tailleBordure: 4,
-    tailleTitre: 20,
     position: "gauche",
+    tailleTitre: 20,
   });
 
   const contentArea = useRef();
@@ -49,16 +49,13 @@ function Multiple(props) {
     });
   };
 
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }, []);
   const [currentCommand, setCurrent] = useState("informations");
   return (
     <div className="single">
       <Navbar />
       <div className="container">
         <div className="title">
-          <h4>Page de garde en groupe (Elèves) :</h4>
+          <h4>Page de garde en groupe étudiant :</h4>
           <div className="line"></div>
         </div>
         <div className="content_view">
@@ -105,4 +102,4 @@ function Multiple(props) {
   );
 }
 
-export default Multiple;
+export default EtudiantsGroup;

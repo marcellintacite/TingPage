@@ -26,7 +26,7 @@ export const dataUniversite = [
     id: 3,
     label: "ISP",
     title: "Institut Supérieur Pédagogique",
-    bp: "258 Bukavu",
+    bp: "854 Bukavu",
     logo: isp,
   },
   {

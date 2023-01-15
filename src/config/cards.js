@@ -15,14 +15,15 @@ const cards = [
   },
   {
     id: 3,
-    titre: "Page de garde groupe",
+    titre: "Page de garde groupe (Elèves)",
     img: img1,
     lien: "multiple",
   },
   {
     id: 4,
-    titre: "Page de garde memoire",
+    titre: "Page de garde groupe (Etudiants)",
     img: img1,
+    lien: "etudiantGroupe",
   },
 ];
 
