@@ -14,6 +14,7 @@ import Lottie from "lottie-react";
 import ReactGA from "react-ga";
 import EtudiantsGroup from "./Components/EtudiantGroup/Single";
 import ani from "./assets/77792-book.json";
+import { ToastContainer } from "react-toastify";
 
 export default function App() {
   const TRACKING_ID = "348552975"; // YOUR_OWN_TRACKING_ID
@@ -23,11 +24,12 @@ export default function App() {
   useState(() => {
     setTimeout(() => {
       setDelay(false);
-    }, 4000);
+    }, 3000);
   });
 
   return (
     <>
+      <ToastContainer />
       {delay && (
         <div
           style={{

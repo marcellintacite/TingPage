@@ -4,6 +4,7 @@ import Header from "./Header";
 import "./../../css/page.css";
 import b from "./../../assets/bor.png";
 import ReactGA from "react-ga";
+import { PulseLoader } from "react-spinners";
 export default function TestPage({ data: textData, design }) {
   // console.log(textData, design);
   const contentArea = useRef();

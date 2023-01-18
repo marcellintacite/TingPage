@@ -1,5 +1,6 @@
 import img1 from "./../assets/cards/pgd.png";
 import img2 from "./../assets/cards/pgd2.png";
+import img3 from "./../assets/cards/pgd3.png";
 const cards = [
   {
     id: 1,
@@ -10,19 +11,19 @@ const cards = [
   {
     id: 2,
     titre: "Page de garde secondaire",
-    img: img2,
+    img: img3,
     lien: "secondaire",
   },
   {
     id: 3,
     titre: "Page de garde groupe (Elèves)",
-    img: img1,
+    img: img3,
     lien: "multiple",
   },
   {
     id: 4,
     titre: "Page de garde groupe (Etudiants)",
-    img: img1,
+    img: img2,
     lien: "etudiantGroupe",
   },
 ];
