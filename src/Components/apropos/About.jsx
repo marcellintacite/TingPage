@@ -20,8 +20,8 @@ export default function About() {
               Tingpage est une application conçue dans le but d’aider les
               étudiants et élèves ne possédant pas d’ordinateur ou étant en
               urgence de leur générer d’une manière simple et rapide une page de
-              garde personnalisé. Tingpage est une application web progressive
-              (PWA), c’est-à-dire une fois installée, vous pouvez l’utilisez
+              garde personnalisée. Tingpage est une application web progressive
+              (PWA), c’est-à-dire une fois installée, vous pouvez l’utiliser
               sans méga et voir même l’envoyer à votre ami via xender, etc.
             </p>
           </div>
@@ -43,8 +43,9 @@ export default function About() {
               de Bukavu et membre du <b>Google Developer Strudents Club UCB</b>{" "}
               qui est un club des étudiants passionnés par la nouvelle
               technologie et qui s’assemblent pour partager leurs connaissances
-              et résoudre les problèmes de la communauté locale grâce à la
-              technologie plus particulièrement les technologies google.
+              et résoudre les problèmes de notre communauté locale grâce à la
+              technologie plus particulièrement en utilisant les technologies
+              google.
             </p>
             <div className="social">
               <div className="gdsc">

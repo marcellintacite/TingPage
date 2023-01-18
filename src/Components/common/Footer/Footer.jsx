@@ -35,13 +35,15 @@ function Footer() {
             </div>
             <div className="second">
               <span>
-                <Link to="/accompagner">Nous accompagner</Link>
+                <a href="mailto:aksantibahiga3@gmail.com">Nous accompagner</a>
               </span>
               <span>
-                <Link to="/don">Faire un don</Link>
+                <a href="tel:+243999537410">Faire un don</a>
               </span>
               <span>
-                <Link to="/contri">Contribuer</Link>
+                <a href="https://wa.me/?text=Bonsoir,j'aimerais contribuer sur ce projet`">
+                  Contribuer
+                </a>
               </span>
             </div>
           </div>

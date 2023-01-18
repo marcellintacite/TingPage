@@ -6,10 +6,15 @@ import illustration from "./../../assets/illustration.png";
 import Card from "../common/card/Card";
 import cards from "./../../config/cards";
 import Footer from "../common/Footer/Footer";
+import { Helmet } from "react-helmet-async";
 
 function Home() {
   return (
     <div className="home">
+      <Helmet>
+        <title>Ting page Accueil</title>
+      </Helmet>
+
       <Navbar />
       <div className="container">
         <header>

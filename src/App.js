@@ -15,6 +15,7 @@ import ReactGA from "react-ga";
 import EtudiantsGroup from "./Components/EtudiantGroup/Single";
 import ani from "./assets/77792-book.json";
 import { ToastContainer } from "react-toastify";
+import { HelmetProvider } from "react-helmet-async";
 
 export default function App() {
   const TRACKING_ID = "348552975"; // YOUR_OWN_TRACKING_ID
@@ -27,39 +28,43 @@ export default function App() {
     }, 3000);
   });
 
+  const helmetContext = {};
+
   return (
     <>
-      <ToastContainer />
-      {delay && (
-        <div
-          style={{
-            width: "100%",
-            height: "100vh",
-            overflow: "hidden",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          <Lottie animationData={ani} width={100} height={100} />
-        </div>
-      )}
-      {!delay && (
-        <div className="app">
-          <ScrollToTop />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/single" element={<Single />} />
-            <Route path="/secondaire" element={<Secondaire />} />
-            <Route path="/multiple" element={<Multiple />} />
-            <Route path="/etudiantGroupe" element={<EtudiantsGroup />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
+      <HelmetProvider context={helmetContext}>
+        <ToastContainer />
+        {delay && (
+          <div
+            style={{
+              width: "100%",
+              height: "100vh",
+              overflow: "hidden",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <Lottie animationData={ani} width={100} height={100} />
+          </div>
+        )}
+        {!delay && (
+          <div className="app">
+            <ScrollToTop />
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/single" element={<Single />} />
+              <Route path="/secondaire" element={<Secondaire />} />
+              <Route path="/multiple" element={<Multiple />} />
+              <Route path="/etudiantGroupe" element={<EtudiantsGroup />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/contact" element={<Contact />} />
 
-            <Route path="*" element={<Home />} />
-          </Routes>
-        </div>
-      )}
+              <Route path="*" element={<Home />} />
+            </Routes>
+          </div>
+        )}
+      </HelmetProvider>
     </>
   );
 }
