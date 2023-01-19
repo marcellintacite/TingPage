@@ -1,5 +1,4 @@
 import React from "react";
-import Select from "react-select";
 import "./../../../css/formulaire.css";
 export default function Formulaires({
   data: formData,
@@ -8,15 +7,7 @@ export default function Formulaires({
   setData,
 }) {
   console.log(formData);
-  const handlesub = (e) => {
-    e.preventDefault();
-    onPdf();
-  };
 
-  const handleChangeUni = (e) => {
-    const ndata = { ...formData, universite: e.value };
-    setData(ndata);
-  };
   const handleChange = (e) => {
     const ndata = { ...formData, [e.target.name]: e.target.value };
     setData(ndata);
@@ -45,7 +36,7 @@ export default function Formulaires({
             value={formData.boitePostal}
             name="boitePostal"
             id=""
-            placeholder="Ex : département d'informatique"
+            placeholder="Ex : BP 854 Bukavu"
           />
         </div>
         <div className="form_group">

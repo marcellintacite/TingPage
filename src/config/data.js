@@ -12,7 +12,7 @@ export const dataUniversite = [
     id: 1,
     label: "UCB",
     title: "Université Catholique de Bukavu",
-    bp: "258 Bukavu",
+    bp: "285 Bukavu",
     logo: ucb,
   },
   {

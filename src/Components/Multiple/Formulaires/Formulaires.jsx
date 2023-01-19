@@ -65,7 +65,7 @@ export default function Formulaires({
             value={formData.boitePostal}
             name="boitePostal"
             id=""
-            placeholder="Ex : département d'informatique"
+            placeholder="Ex : BP 854 bukavu"
           />
         </div>
         <div className="form_group">
