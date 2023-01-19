@@ -37,6 +37,7 @@ export default function Formulaires({
             name="boitePostal"
             id=""
             placeholder="Ex : BP 854 Bukavu"
+            required
           />
         </div>
         <div className="form_group">
@@ -94,6 +95,7 @@ export default function Formulaires({
             name="titulaire"
             id=""
             placeholder="Ex : Ass. Kanyaku Kilola"
+            required
           />
         </div>
         <div className="form_group">
@@ -104,6 +106,7 @@ export default function Formulaires({
             name="promotion"
             id=""
             placeholder="4ième CG"
+            required
           />
         </div>
         <div className="form_group">

@@ -60,6 +60,7 @@ export default function Formulaires({
             className="select"
             name="universite"
             onChange={(e) => handleChangeUni(e)}
+            required
           />
         </div>
         <div className="form_group">
@@ -83,6 +84,7 @@ export default function Formulaires({
             name="departement"
             id=""
             placeholder="Ex : département d'informatique"
+            required
           />
         </div>
         <div className="form_group">
@@ -128,6 +130,7 @@ export default function Formulaires({
             name="titulaire"
             id=""
             placeholder="Ex : Ass. Kanyaku Kilola"
+            required
           />
         </div>
         <div className="form_group">
@@ -138,6 +141,7 @@ export default function Formulaires({
             name="promotion"
             id=""
             placeholder="Bac 2 info"
+            required
           />
         </div>
         <div className="form_group">
