@@ -11,7 +11,7 @@ export default function TestPage({ data: textData, design }) {
   const handleExportWithFunction = (event) => {
     savePDF(contentArea.current, {
       paperSize: "A4",
-      margin: "10px 15px",
+      margin: { left: "0.3cm", top: "0.1cm", right: "0.3cm", bottom: "0.3cm" },
       fileName: textData.nom,
     });
     ReactGA.event({
