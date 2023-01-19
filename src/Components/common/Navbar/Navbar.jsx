@@ -20,15 +20,7 @@ function Navbar() {
               <div className="line"></div>
             </NavLink>
           </li>
-          <li>
-            <NavLink
-              to="/Design"
-              className={({ isActive }) => isActive && "active"}
-            >
-              Designs
-              <div className="line"></div>
-            </NavLink>
-          </li>
+
           <li>
             <NavLink
               to="/contact"

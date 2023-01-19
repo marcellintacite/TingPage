@@ -1,7 +1,7 @@
 import React from "react";
 import { dataUniversite } from "../../config/data";
 
-export default function Header({ dataText, design }) {
+export default function Header({ dataText, design, val }) {
   const current = dataUniversite.filter(
     (u) => u.label === dataText.universite
   )[0];
@@ -28,7 +28,13 @@ export default function Header({ dataText, design }) {
           {current.bp}
         </h3>
       )}
-      {current && <img src={current.logo} alt="logo université" width={70} />}
+      {current && (
+        <img
+          src={current.logo}
+          alt="logo université"
+          width={val.length <= 3 ? 70 : 50}
+        />
+      )}
       {dataText && (
         <h3
           style={{

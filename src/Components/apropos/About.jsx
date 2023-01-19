@@ -17,12 +17,12 @@ export default function About() {
               <div className="line"></div>
             </div>
             <p>
-              Tingpage est une application conçue dans le but d’aider les
-              étudiants et élèves ne possédant pas d’ordinateur ou étant en
-              urgence de leur générer d’une manière simple et rapide une page de
-              garde personnalisée. Tingpage est une application web progressive
-              (PWA), c’est-à-dire une fois installée, vous pouvez l’utiliser
-              sans méga et voir même l’envoyer à votre ami via xender, etc.
+              <b>Tingpage</b> est une application qui permet aux étudiants et
+              aux élèves de générer de manière simple, rapide et efficace une
+              page de garde personnalisée. Tingpage est une application web
+              progressive (PWA): une fois installée, vous pouvez l’utiliser sans
+              mégas; voire même l’envoyer à un proche telle une application
+              mobile.
             </p>
           </div>
           <div className="right">
@@ -40,11 +40,11 @@ export default function About() {
             <p>
               Tingpage est une application conçue par{" "}
               <b>Aksanti Bahiga Tacite</b>, étudiant à l’université Catholique
-              de Bukavu et membre du <b>Google Developer Strudents Club UCB</b>{" "}
-              qui est un club des étudiants passionnés par la nouvelle
-              technologie et qui s’assemblent pour partager leurs connaissances
-              et résoudre les problèmes de notre communauté locale grâce à la
-              technologie plus particulièrement en utilisant les technologies
+              de Bukavu et membre du <b>Google Developer Student Club UCB</b>{" "}
+              qui est un club d’étudiants passionnés par les nouvelles
+              technologies et qui se partagent mutuellement leurs connaissances
+              afin de résoudre les problèmes de la communauté locale grâce à la
+              technologie et plus particulièrement grâce aux technologies
               google.
             </p>
             <div className="social">

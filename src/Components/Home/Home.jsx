@@ -11,9 +11,7 @@ import { Helmet } from "react-helmet-async";
 function Home() {
   return (
     <div className="home">
-      <Helmet>
-        <title>Ting page Accueil</title>
-      </Helmet>
+      <Helmet>meta</Helmet>
 
       <Navbar />
       <div className="container">
@@ -24,7 +22,7 @@ function Home() {
               Meilleure plateforme pour la conception de vos différentes pages
               sans vous soucier du design.{" "}
             </p>
-            <Link to="/about">Apprendre plus</Link>
+            <Link to="/about">En savoir plus</Link>
           </div>
         </header>
         <section className="pages">

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { toast } from "react-toastify";
 import "./../../../css/formulaire.css";
 export default function Formulaires({
   data: formData,
@@ -17,8 +18,12 @@ export default function Formulaires({
   const handleAdd = () => {
     const nom = `input${inputFields.length + 1}`;
     console.log(nom);
-    const ndata = [...inputFields, { name: nom, value: "" }];
-    setInputFields(ndata);
+    if (Object.values(inputFields).length < 10) {
+      const ndata = [...inputFields, { name: nom, value: "" }];
+      setInputFields(ndata);
+    } else {
+      toast.warning("Vous ne pouvez pas ajouter plus de 10");
+    }
   };
   const handleDelete = (item) => {
     const ndata = inputFields.filter((i) => i.name !== item.name);

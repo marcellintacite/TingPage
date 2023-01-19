@@ -41,9 +41,7 @@ function Footer() {
                 <a href="tel:+243999537410">Faire un don</a>
               </span>
               <span>
-                <a href="https://wa.me/?text=Bonsoir,j'aimerais contribuer sur ce projet`">
-                  Contribuer
-                </a>
+                <a href="https://wa.link/uan8yw">Contribuer</a>
               </span>
             </div>
           </div>

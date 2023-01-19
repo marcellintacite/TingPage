@@ -60,7 +60,7 @@ export default function TestPage({ data: textData, design }) {
             backgroundSize: "cover",
           }}
         >
-          <Header dataText={textData} design={design} />
+          <Header dataText={textData} design={design} val={values} />
           <div
             id="title"
             className="title"
@@ -93,7 +93,7 @@ export default function TestPage({ data: textData, design }) {
               width: "81%",
               fontSize: 16,
               margin: "auto",
-              marginTop: 40,
+              marginTop: values.length <= 3 ? 40 : 10,
             }}
           >
             <div
@@ -158,7 +158,7 @@ export default function TestPage({ data: textData, design }) {
                   className="circle"
                   style={{
                     marginTop:
-                      values.length <= 3 ? 200 : 200 + values.length * 5,
+                      values.length <= 3 ? 200 : 200 + values.length * 8,
                     paddingBottom: 10,
                   }}
                 >

@@ -15,6 +15,7 @@ import ReactGA from "react-ga";
 import EtudiantsGroup from "./Components/EtudiantGroup/Single";
 import ani from "./assets/77792-book.json";
 import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { HelmetProvider } from "react-helmet-async";
 
 export default function App() {
